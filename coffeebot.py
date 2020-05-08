@@ -2,76 +2,78 @@ def print_message():
     print("I'm sorry, I did not understand your selection. Please enter the corresponding letter for your response.")
 
 def get_size():
-    res = input("What size drink can I get for you? \n[a] Small \n[b] Medium \n[c] Large \n> ")
-    if res == "a":
-        return "small"
-    elif res == "b":
-        return "medium"
-    elif res == "c":
-        return "large"
-    elif res == "d":
-        return "x-large"
-    elif res == "e":
-        return "xx-large"
-    else:
-        print_message()
-        return get_size()
+    while True:
+        res = input("What size drink can I get for you? \n[a] Small \n[b] Medium \n[c] Large \n> ")
+        if res == "a":
+            return "small"
+        elif res == "b":
+            return "medium"
+        elif res == "c":
+            return "large"
+        elif res == "d":
+            return "x-large"
+        elif res == "e":
+            return "xx-large"
+        else:
+            print_message()
 
 def get_drink_type():
-    res = input("What type of drink would you like?  \n[a] Brewed coffee \n[b] Mocha \n[c] Latte \n>")
-    if res == "a":
-        return "brewed coffee"
-    elif res == "b":
-        return "mocha"
-    elif res == "c":
-        return order_latte()
-    else:
-        print_message()
-        return get_drink_type()
+    while True:
+        res = input("What type of drink would you like?  \n[a] Brewed coffee \n[b] Mocha \n[c] Latte \n>")
+        if res == "a":
+            return "brewed coffee"
+        elif res == "b":
+            return "mocha"
+        elif res == "c":
+            return order_latte()
+        else:
+            print_message()
+        
 
 def order_latte():
-    res = input("And what kind of milk for your latte? \n[a] 2% milk \n[b] Non-fat milk \n[c] Soy milk \n>")
-    if res == "a":
-        return "latte"
-    elif res == "b":
-        return "non-fat latte"
-    elif res == "c":
-        return "soy latte"
-    else:
-        print_message()
-        return order_latte()
+    while True:
+        res = input("And what kind of milk for your latte? \n[a] 2% milk \n[b] Non-fat milk \n[c] Soy milk \n>")
+        if res == "a":
+            return "latte"
+        elif res == "b":
+            return "non-fat latte"
+        elif res == "c":
+            return "soy latte"
+        else:
+            print_message()
+        
 
 def type_of_cup():
-    res = input("Would you like a plastic cup or your own reusable cup? \n[a] plastic \n[b] reusable \n>")
-    if res == "a":
-        return "plastic"
-    elif res == "b":
-        return "reusable"
-    else:
-        print_message()
-        return type_of_cup()
+    while True:
+        res = input("Would you like a plastic cup or your own reusable cup? \n[a] plastic \n[b] reusable \n>")
+        if res == "a":
+            return "plastic"
+        elif res == "b":
+            return "reusable"
+        else:
+            print_message()
 
 def type_of_order():
-    res = input("Is this order for here to go? \n[a] in-store \n[b] to-go \n>")
-    if res == "a":
-        return "in-store"
-    elif res == "b":
-        return "to go"
-    else:
-        print_message()
-        return type_of_order()
+    while True:
+        res = input("Is this order for here to go? \n[a] in-store \n[b] to-go \n>")
+        if res == "a":
+            return "in-store"
+        elif res == "b":
+            return "to go"
+        else:
+            print_message()
 
 def get_donation_amount():
-    res = input("How much would you like to donate? \n[a] $2 \n[b] $5 \n[c] $10 \n>")
-    if res == "a":
-        return 2
-    elif res == "b":
-        return 5
-    elif res == "c":
-        return 10
-    else:
-        print_message()
-        return get_donation_amount()
+    while True:
+        res = input("How much would you like to donate? \n[a] $2 \n[b] $5 \n[c] $10 \n>")
+        if res == "a":
+            return 2
+        elif res == "b":
+            return 5
+        elif res == "c":
+            return 10
+        else:
+            print_message()
 
 def ask_for_donation():
     res = input("Would you like to donate today? \n[a] Yes \n[b] No \n>")
@@ -81,52 +83,53 @@ def ask_for_donation():
         return 0
 
 def hot_or_iced():
-    res = input("Do you want your drink iced or hot? \n[a] hot \n[b] iced \n>")
-    if res == "a":
-        return "hot"
-    if res == "b":
-        return "iced"
-    else:
-        print_message()
-        return hot_or_iced()
+    while True:
+        res = input("Do you want your drink iced or hot? \n[a] hot \n[b] iced \n>")
+        if res == "a":
+            return "hot"
+        if res == "b":
+            return "iced"
+        else:
+            print_message()
 
 def pastry_option():
-    res = input("What type of pastry would you like? \n[a] stroopwaffel \n[b] coffeecake \n[c] scones \n[d] bagel \n>")
-    if res == "a":
-        return "stroopwaffels! my fave!"
-    elif res == "b":
-        return "provide a function to ask if they want coffeecake to be warmed up or not"
-    elif res == "c":
-        return "scone"
-    elif res == "d":
-        return "bagel"
-    else:
-        print_message()
-        return pastry_option()
+    while True:
+        res = input("What type of pastry would you like? \n[a] stroopwaffel \n[b] coffeecake \n[c] scones \n[d] bagel \n>")
+        if res == "a":
+            return "stroopwaffels! my fave!"
+        elif res == "b":
+            return "provide a function to ask if they want coffeecake to be warmed up or not"
+        elif res == "c":
+            return "scone"
+        elif res == "d":
+            return "bagel"
+        else:
+            print_message()
 
 def offer_pastry():
-    res = input("Would you like a pastry? \n[a] yes \n[b] no \n>")
-    if res == "a":
-        return pastry_option()
-    elif res == "b":
-        return "None. What do you mean you're not hungry?"
-    else:
-        print_message()
-        return offer_pastry()
+    while True:
+        res = input("Would you like a pastry? \n[a] yes \n[b] no \n>")
+        if res == "a":
+            return pastry_option()
+        elif res == "b":
+            return "None. What do you mean you're not hungry?"
+        else:
+            print_message()
 
 
 
 def payment_method():
-    res = input("How would you like to pay? \n[a] VISA/MASTERCARD \n[b] apple pay \n[c] google pay \n>")
-    if res == "a":
-        return "VISA/MASTERCARD"
-    elif res == "b":
-        return "apple pay"
-    elif res == "c":
-        return "google pay"
-    else:
-        print_message()
-        return payment_method()
+    while True:
+        res = input("How would you like to pay? \n[a] VISA/MASTERCARD \n[b] apple pay \n[c] google pay \n>")
+        if res == "a":
+            return "VISA/MASTERCARD"
+        elif res == "b":
+            return "apple pay"
+        elif res == "c":
+            return "google pay"
+        else:
+            print_message()
+
 
 
 def total_amount(donation_choice):
