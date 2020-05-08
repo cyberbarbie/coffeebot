@@ -1,8 +1,12 @@
+# creates a function that displays information when a user doesn't select any of the given options
 def print_message():
     print("I'm sorry, I did not understand your selection. Please enter the corresponding letter for your response.")
 
+# this function is where we prompt the user for information on what size drink they want
 def get_size():
+    # input function is how we get user information and store that value in a variable
     res = input("What size drink can I get for you? \n[a] Small \n[b] Medium \n[c] Large \n> ")
+    # create a set of conditionals that return a string when a user selects a drink option
     if res == "a":
         return "small"
     elif res == "b":
@@ -13,22 +17,28 @@ def get_size():
         return "x-large"
     elif res == "e":
         return "xx-large"
+    # if a user doesnt select any of the given option, the else conditional will return
+    # the print_message() function will run and then we follow it up with redirecting them back to the get_size() function 
     else:
         print_message()
         return get_size()
 
+# create a function to get the type of drink the user wants 
 def get_drink_type():
     res = input("What type of drink would you like?  \n[a] Brewed coffee \n[b] Mocha \n[c] Latte \n>")
     if res == "a":
         return "brewed coffee"
     elif res == "b":
         return "mocha"
+    # if they select option[c] latte then we will return a special function that inquiries about additional options to add to their latte
     elif res == "c":
         return order_latte()
+    # this conditional runs if the user didnt select any of the available options
     else:
         print_message()
         return get_drink_type()
 
+# if the user selects latte, then we will direct them to this function that inquiries about what type of milk they want added!
 def order_latte():
     res = input("And what kind of milk for your latte? \n[a] 2% milk \n[b] Non-fat milk \n[c] Soy milk \n>")
     if res == "a":
@@ -73,10 +83,13 @@ def get_donation_amount():
         print_message()
         return get_donation_amount()
 
+# this function runs to prompt the user if they would like to donate
 def ask_for_donation():
     res = input("Would you like to donate today? \n[a] Yes \n[b] No \n>")
+    # if the user selects when asked to donate, we will return a special function to retrieve more information (how much they want to donate)
     if res == "a":
         return get_donation_amount()
+        # if the user chooses to not donate, we will set the donation amount to be zero
     else:
         return 0
 
@@ -104,8 +117,10 @@ def pastry_option():
         print_message()
         return pastry_option()
 
+#this function runs to retrieve information on whether the user wants a pastry
 def offer_pastry():
     res = input("Would you like a pastry? \n[a] yes \n[b] no \n>")
+    # if user selects yes then the pastry_option() will run to present them with pastry menu options to select
     if res == "a":
         return pastry_option()
     elif res == "b":
@@ -113,8 +128,6 @@ def offer_pastry():
     else:
         print_message()
         return offer_pastry()
-
-
 
 def payment_method():
     res = input("How would you like to pay? \n[a] VISA/MASTERCARD \n[b] apple pay \n[c] google pay \n>")
@@ -128,15 +141,20 @@ def payment_method():
         print_message()
         return payment_method()
 
-
+# this function calculates the total including sales tax and donation
 def total_amount(donation_choice):
     # calculate the total amount = total amount + 1.08 (sales tax) + donation
     subtotal = 13
+    # rounds the total
     total = round((subtotal * 1.08) + donation_choice,2)
     return total
 
+# this is the main function
 def coffee_bot():
+    # This is where the bot makes the introduction and summarizes the order
     print("Welcome to the cafe!")
+    print("Can I take your order?")
+    # we set the user responses to variables that we can use for when we summarize the order 
     size = get_size()
     drink_type = get_drink_type()
     cup = type_of_cup()
@@ -146,7 +164,7 @@ def coffee_bot():
     pastry = offer_pastry()
     total = total_amount(donation_choice)
     payment = payment_method()
-
+# what our chatbot returns after taking the order
     print(f"Alright, that's a {size} {drink_type}! You chose to use a {cup} and that you want your drink served {temp}.")
     name = input("Can I get your name please? ")
     print(f"Your order is set to: {order}")
