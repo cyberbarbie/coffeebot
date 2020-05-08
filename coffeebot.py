@@ -79,6 +79,25 @@ def get_donation_amount():
         else:
             print_message()
 
+def get_tip_amount():
+    while True: 
+        res = input("How much would you like to tip? \n[a] $1 \n[b] $2 \n[c] $5 \n>")
+        if res == "a":
+            return 1
+        if res == "b":
+            return 2
+        if res == "c":
+            return 5
+        else:
+            print_message()
+
+def ask_for_tip():
+    res = input("Would you like to tip? \n[a] Yes \n[b] No \n>")
+    if res == "a":
+        return get_tip_amount()
+    else:
+        return 0
+
 # this function runs to prompt the user if they would like to donate
 def ask_for_donation():
     res = input("Would you like to donate today? \n[a] Yes \n[b] No \n>")
